@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ahead</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="dragula.js"></script>
+</head>
+<body>
+
+<header>
+	
+<h1>Ahead</h1>
+
+<!-- <a class="auth" href="#">Connect with google</a> -->
+
+<a href="#" class="nav"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg></a>
+
+<a href="#" class="nav"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg></a>
+
+</header>
+<section>
+	<div id="left">
+		<p>13 <i class="mute">Mon</i>
+			<a href="#" id="hede"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></a></p>
+
+		<span draggable="true">This is an item</span> 
+		<span>Another item</span>
+		<span>Yet another item</span> 
+		<span>Item with a longer name</span>
+		<span class="done">Completed itemd</span>
+
+	</div>
+	<div id="right">
+		<p>14 <i class="mute">Tue</i>
+		<a href="#" id="hede"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></a></p>
+		<span>Another example item</span>
+		<span>Yet another example item with a really long name bc there won't be a limit of chars for items</span>
+		<span>Example item</span>
+		<span class="done">Item</span>
+		<span class="done">Completed item</span>
+		<span class="done">Another completed item</span>
+	</div>
+	<div>
+		<p>15 <i class="mute">Wed</i>
+		<a href="#" id="hede"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></a></p>
+		<span>Example item</span> 
+		<span>Another example item</span>
+	</div>
+	<div>
+		<p>16 <i class="mute">Thu</i>
+		<a href="#" id="hede"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></a></p>
+		<span>Another example item</span>
+	</div>
+	<div>
+		<p>17 <i class="mute">Fri</i>
+			<a href="#" id="hede"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></a></p>
+	</div>
+
+
+
+</section>
+<footer>
+<div>Arrows <i class="mute">to move around</i></div>
+<div>K / Double click <i class="mute">to complete</i></div>
+<div>Enter / Click <i class="mute">to edit</i></div>
+<div>N / + <i class="mute">to add new</i></div>
+<div>Esc / - <i class="mute">to remove</i></div>
+<div>Shift+arrow / Drag <i class="mute">to carry</i></div>
+<div class="grow"><a href="#">About</a></div>
+</footer>
+
+<div class="overlay">
+<div class="content">
+<p>14 Dec<span class="mute">Tue</span></p>
+<textarea id="itemName" placeholder="Describe yourself here..."></textarea>
+<a href="#">Add note</a>
+<a href="#">Repeat</a>
+</div>	
+</div>
+
+<script>
+$( "span" ).dblclick(function() {
+  $( this ).toggleClass( "done" );
+});
+
+$( 'p a' ).click(function() {
+$( "<span>new item</span>" ).prependTo( $(this).parents(':eq(1)') );
+});
+
+
+
+
+</script>
+
+<script type="text/javascript">
+	dragula([document.getElementById(left), document.getElementById(right)]);
+</script>
+
+
+
+</body>
+</html>
